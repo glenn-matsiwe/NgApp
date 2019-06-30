@@ -1,0 +1,28 @@
+<mat-drawer-container style="height: 100vh;" class="example-container">
+
+<!--  SIDE BAR CONTENT-->
+  <mat-drawer #drawer [mode]="drawerMode">
+    <div class="container">
+      <p class="h2">Menu</p>
+      <nav class="">
+        <a class="nav-link" routerLink="/" ><fa-icon [icon]="homeIcon" ></fa-icon> Home</a>
+        <a class="nav-link" routerLink="/about"><fa-icon [icon]="aboutIcon" ></fa-icon> About</a>
+      </nav>
+    </div>
+  </mat-drawer>
+
+<!--  MAIN CONTENT-->
+  <mat-drawer-content>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" (click)="drawer.toggle()"><fa-icon [icon]="barsIcon" ></fa-icon>    VadeMat Studio</a>
+    </nav>
+
+    <router-outlet></router-outlet>
+
+    <div class="align-content-center fixed-bottom">
+      <app-footer></app-footer>
+    </div>
+
+  </mat-drawer-content>
+
+</mat-drawer-container>
